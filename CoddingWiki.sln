@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoddingWiki_ Web", "CoddingWiki_ Web\CoddingWiki_ Web.csproj", "{F39BECC8-5B16-449A-9ECD-B6C46F6F47BC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoddingWiki_Web", "CoddingWiki_ Web\CoddingWiki_Web.csproj", "{F39BECC8-5B16-449A-9ECD-B6C46F6F47BC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoddingWiki_DataAcess", "CoddingWiki_DataAcess\CoddingWiki_DataAcess.csproj", "{27C3DB8F-38F8-4128-BE19-25CA87FF05D3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoddingWiki_Model", "CoddingWiki_Model\CoddingWiki_Model.csproj", "{BE2B52A7-2C43-4CD9-A109-BFA2B83CE3F2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoddingWiki_Console", "CoddingWiki_Console\CoddingWiki_Console.csproj", "{0C22A10B-3EAC-4A98-804D-2D7316AC261E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{F39BECC8-5B16-449A-9ECD-B6C46F6F47BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F39BECC8-5B16-449A-9ECD-B6C46F6F47BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F39BECC8-5B16-449A-9ECD-B6C46F6F47BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27C3DB8F-38F8-4128-BE19-25CA87FF05D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27C3DB8F-38F8-4128-BE19-25CA87FF05D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27C3DB8F-38F8-4128-BE19-25CA87FF05D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27C3DB8F-38F8-4128-BE19-25CA87FF05D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE2B52A7-2C43-4CD9-A109-BFA2B83CE3F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE2B52A7-2C43-4CD9-A109-BFA2B83CE3F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE2B52A7-2C43-4CD9-A109-BFA2B83CE3F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE2B52A7-2C43-4CD9-A109-BFA2B83CE3F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C22A10B-3EAC-4A98-804D-2D7316AC261E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C22A10B-3EAC-4A98-804D-2D7316AC261E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C22A10B-3EAC-4A98-804D-2D7316AC261E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C22A10B-3EAC-4A98-804D-2D7316AC261E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

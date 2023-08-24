@@ -1,8 +1,9 @@
-﻿using CoddingWiki__Web.Models;
+﻿
+using CoddingWiki_Model.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace CoddingWiki__Web.Controllers
+namespace CoddingWiki_Web.Controllers
 {
     public class HomeController : Controller
     {
