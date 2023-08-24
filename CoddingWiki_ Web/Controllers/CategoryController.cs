@@ -75,5 +75,27 @@ namespace CoddingWiki__Web.Controllers
 
         }
 
+        public IActionResult CreateMultiple2()
+        {
+            for (int i = 1; i <= 2; i++)
+            {
+                _db.Categories.Add(new Category { CategoryName=Guid.NewGuid().ToString() });
+                //_db.SaveChanges();
+            }
+            _db.SaveChanges();
+            return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult CreateMultiple5()
+        {
+            for (int i = 1; i <=5; i++)
+            {
+                _db.Categories.Add(new Category { CategoryName = Guid.NewGuid().ToString() });
+                //_db.SaveChanges();
+            }
+            _db.SaveChanges();
+            return RedirectToAction(nameof(Index));
+        }
+
     }
 }
