@@ -77,22 +77,44 @@ namespace CoddingWiki__Web.Controllers
 
         public IActionResult CreateMultiple2()
         {
+            List<Category> categories = new List<Category>();
             for (int i = 1; i <= 2; i++)
             {
-                _db.Categories.Add(new Category { CategoryName=Guid.NewGuid().ToString() });
+                categories.Add(new Category { CategoryName=Guid.NewGuid().ToString() });
                 //_db.SaveChanges();
             }
+            _db.Categories.AddRange(categories);
             _db.SaveChanges();
             return RedirectToAction(nameof(Index));
         }
 
         public IActionResult CreateMultiple5()
         {
+            List<Category> categories = new List<Category>();
             for (int i = 1; i <=5; i++)
             {
-                _db.Categories.Add(new Category { CategoryName = Guid.NewGuid().ToString() });
+                categories.Add(new Category { CategoryName = Guid.NewGuid().ToString() });
                 //_db.SaveChanges();
             }
+            _db.Categories.AddRange(categories);
+            _db.SaveChanges();
+            return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult RemoveMultiple2()
+        {
+            List<Category> categories = _db.Categories.OrderByDescending(u=>u.CategoryId).Take(2).ToList();
+
+            _db.Categories.RemoveRange(categories);
+            _db.SaveChanges();
+            return RedirectToAction(nameof(Index));
+        }
+
+        public IActionResult RemoveMultiple5()
+        {
+            List<Category> categories = _db.Categories.OrderByDescending(u => u.CategoryId).Take(5).ToList();
+
+            _db.Categories.RemoveRange(categories);
             _db.SaveChanges();
             return RedirectToAction(nameof(Index));
         }
