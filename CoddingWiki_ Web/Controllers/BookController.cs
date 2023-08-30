@@ -17,7 +17,13 @@ namespace CoddingWiki__Web.Controllers
         }
         public IActionResult Index()
         {
-            IEnumerable<Book> objList=_db.Books;
+            List<Book> objList=_db.Books.ToList();
+
+            foreach (var obj in objList)
+            {
+                //obj.Publisher=_db.Publishers.Find(obj.Publisher_Id);
+                _db.Entry(obj).Reference(u=>u.Publisher).Load();
+            }
             return View(objList);
         }
 
@@ -79,6 +85,49 @@ namespace CoddingWiki__Web.Controllers
             _db.Books.Remove(obj);
             await _db.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
+
+        }
+
+        public IActionResult Details(int? id)
+        {
+            BookVM obj = new();
+
+            if (id == null || id == 0)
+            {
+                //create
+                return NotFound();
+            }
+            //edit
+            obj.Book = _db.Books.FirstOrDefault(u => u.BookId == id);
+            obj.Book.BookDetail = _db.BookDetails.FirstOrDefault(u => u.Book_Id == id);
+            if (obj == null)
+            {
+                return NotFound();
+            }
+            return View(obj);
+
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+
+        public async Task<IActionResult> Details(BookVM obj)
+        {
+            obj.Book.BookDetail.Book_Id = obj.Book.BookId;
+            if (obj.Book.BookId == 0)
+            {
+                //create
+                await _db.BookDetails.AddAsync(obj.Book.BookDetail);
+            }
+            else
+            {
+                //update
+                _db.BookDetails.Update(obj.Book.BookDetail);
+
+            }
+            await _db.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+
 
         }
 
